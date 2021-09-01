@@ -16,7 +16,7 @@ public class ConexaoBD {
 	public Statement stm;
 	public ResultSet rs;
 	private String driver = "org.postgresql.Driver";
-	private String local = "jdbc:postgresql://localhost:5432/condominio_bd";
+	private String local = "jdbc:postgresql://localhost:5432/condominiobd";
 	private String usuario = "postgres";
 	private String password ="@Neves123";
 	public Connection con;

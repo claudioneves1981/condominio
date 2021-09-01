@@ -65,7 +65,7 @@ public class CadastrarProprietario extends JFrame {
 	private JTextField jTextFieldEstado;
 	private JFormattedTextField jFormattedFoneProprietario;
 	private JFormattedTextField jFormattedCpf_proprietario;
-	private JInternalFrame jInternalFrameCadastroEndereço;
+	private JInternalFrame jInternalFrameCadastroEndereco;
 	private JInternalFrame jInternalFramePrincipal;
 	private final ButtonGroup buttonGroupEndereco = new ButtonGroup();
 	@SuppressWarnings("rawtypes")
@@ -102,7 +102,7 @@ public class CadastrarProprietario extends JFrame {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public CadastrarProprietario() {
 				
-		jInternalFrameCadastroEndereço = new JInternalFrame("Endere\u00E7o da Cidade onde Mora");
+		jInternalFrameCadastroEndereco = new JInternalFrame("Endere\u00E7o da Cidade onde Mora");
 		jInternalFramePrincipal = new JInternalFrame("Cadastro do Propriet\u00E1rio / Morador");
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -154,7 +154,7 @@ public class CadastrarProprietario extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				jInternalFramePrincipal.dispose();
-				jInternalFrameCadastroEndereço.dispose();
+				jInternalFrameCadastroEndereco.dispose();
 				buttonGroupCadastro.clearSelection();
 				buttonGroupEndereco.clearSelection();
 				
@@ -215,17 +215,17 @@ public class CadastrarProprietario extends JFrame {
 		jInternalFramePrincipal.getContentPane().add(jTextFieldEmailProprietario);
 		jTextFieldEmailProprietario.setColumns(10);
 		
-		jInternalFrameCadastroEndereço.setToolTipText("Endere\u00E7o da Cidade onde Mora");
-		jInternalFrameCadastroEndereço.setBounds(10, 167, 1079, 136);
-		jInternalFramePrincipal.getContentPane().add(jInternalFrameCadastroEndereço);
-		jInternalFrameCadastroEndereço.getContentPane().setLayout(null);
+		jInternalFrameCadastroEndereco.setToolTipText("Endere\u00E7o da Cidade onde Mora");
+		jInternalFrameCadastroEndereco.setBounds(10, 167, 1079, 136);
+		jInternalFramePrincipal.getContentPane().add(jInternalFrameCadastroEndereco);
+		jInternalFrameCadastroEndereco.getContentPane().setLayout(null);
 		
 		JCheckBox jCheckBoxEndereco = new JCheckBox("O Propriet\u00E1rio n\u00E3o Mora no Condominio");
 		buttonGroupEndereco.add(jCheckBoxEndereco);
 		jCheckBoxEndereco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(jCheckBoxEndereco.isSelected()) {
-					jInternalFrameCadastroEndereço.setVisible(true);
+					jInternalFrameCadastroEndereco.setVisible(true);
 				}
 			}
 		});
@@ -234,78 +234,78 @@ public class CadastrarProprietario extends JFrame {
 		
 		JLabel lblNewLabel_8 = new JLabel("Endere\u00E7o");
 		lblNewLabel_8.setBounds(25, 24, 76, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_8);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_8);
 		
 		jTextFieldEnderecoProprietario = new JTextField();
 		jTextFieldEnderecoProprietario.setBounds(91, 21, 543, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldEnderecoProprietario);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldEnderecoProprietario);
 		jTextFieldEnderecoProprietario.setColumns(10);
 		
 		JLabel lblNewLabel_9 = new JLabel("N\u00BA");
 		lblNewLabel_9.setBounds(644, 24, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_9);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_9);
 		
 		jTextFieldNumeroEndereco = new JTextField();
 		jTextFieldNumeroEndereco.setBounds(664, 21, 86, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldNumeroEndereco);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldNumeroEndereco);
 		jTextFieldNumeroEndereco.setColumns(10);
 		
 		JLabel lblNewLabel_10 = new JLabel("Complemento");
 		lblNewLabel_10.setBounds(777, 24, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_10);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_10);
 		
 		jTextFieldComplemento = new JTextField();
 		jTextFieldComplemento.setBounds(822, 21, 134, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldComplemento);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldComplemento);
 		jTextFieldComplemento.setColumns(10);
 		
 		JLabel lblNewLabel_11 = new JLabel("Bairro");
 		lblNewLabel_11.setBounds(25, 70, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_11);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_11);
 		
 		jTextFieldBairro = new JTextField();
 		jTextFieldBairro.setBounds(55, 67, 243, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldBairro);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldBairro);
 		jTextFieldBairro.setColumns(10);
 		
 		JLabel lblNewLabel_12 = new JLabel("CEP");
 		lblNewLabel_12.setBounds(349, 70, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_12);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_12);
 		
 		jTextFieldCep = new JTextField();
 		jTextFieldCep.setBounds(376, 67, 86, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldCep);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldCep);
 		jTextFieldCep.setColumns(10);
 		
 		JLabel lblNewLabel_13 = new JLabel("Cidade");
 		lblNewLabel_13.setBounds(501, 70, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_13);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_13);
 		
 		jTextFieldCidade = new JTextField();
 		jTextFieldCidade.setBounds(541, 67, 86, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldCidade);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldCidade);
 		jTextFieldCidade.setColumns(10);
 		
 		JLabel lblNewLabel_14 = new JLabel("Estado");
 		lblNewLabel_14.setBounds(684, 70, 46, 14);
-		jInternalFrameCadastroEndereço.getContentPane().add(lblNewLabel_14);
+		jInternalFrameCadastroEndereco.getContentPane().add(lblNewLabel_14);
 		
 		jTextFieldEstado = new JTextField();
 		jTextFieldEstado.setBounds(726, 67, 86, 20);
-		jInternalFrameCadastroEndereço.getContentPane().add(jTextFieldEstado);
+		jInternalFrameCadastroEndereco.getContentPane().add(jTextFieldEstado);
 		jTextFieldEstado.setColumns(10);
 		
 		JButton jButtonFecharInternalEndereco = new JButton("Fechar");
 		jButtonFecharInternalEndereco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				jInternalFrameCadastroEndereço.dispose();
+				jInternalFrameCadastroEndereco.dispose();
 				buttonGroupEndereco.clearSelection();
 
 			}
 		});
 		jButtonFecharInternalEndereco.setBounds(966, 20, 89, 23);
-		jInternalFrameCadastroEndereço.getContentPane().add(jButtonFecharInternalEndereco);
+		jInternalFrameCadastroEndereco.getContentPane().add(jButtonFecharInternalEndereco);
 		
 		jButtonNovo = new JButton("Novo");
 		jButtonNovo.addActionListener(new ActionListener() {
@@ -419,7 +419,7 @@ public class CadastrarProprietario extends JFrame {
 				jTextFieldEstado.setText("");
 				jComboBoxTipoMorador.setSelectedItem("");
 				
-				jInternalFrameCadastroEndereço.dispose();
+				jInternalFrameCadastroEndereco.dispose();
 				jInternalFramePrincipal.dispose();
 				buttonGroupEndereco.clearSelection();
 				
@@ -483,7 +483,7 @@ public class CadastrarProprietario extends JFrame {
 					jComboBoxTipoMorador.setSelectedItem("");
 					jTextFieldPesquisar.setText("");
 					
-					jInternalFrameCadastroEndereço.dispose();
+					jInternalFrameCadastroEndereco.dispose();
 					jInternalFramePrincipal.dispose();
 					buttonGroupEndereco.clearSelection();
 					
@@ -627,7 +627,7 @@ public class CadastrarProprietario extends JFrame {
 					jComboBoxTipoMorador.setSelectedItem("");
 					jTextFieldPesquisar.setText("");
 					
-					jInternalFrameCadastroEndereço.dispose();
+					jInternalFrameCadastroEndereco.dispose();
 					jInternalFramePrincipal.dispose();
 					buttonGroupEndereco.clearSelection();
 					
@@ -673,7 +673,7 @@ public class CadastrarProprietario extends JFrame {
 				jButtonSalvar.setEnabled(false);
 				
 								
-				jInternalFrameCadastroEndereço.dispose();
+				jInternalFrameCadastroEndereco.dispose();
 				jInternalFramePrincipal.dispose();
 				buttonGroupEndereco.clearSelection();
 				
@@ -752,7 +752,7 @@ public void preencherTabelaProprietario(String SQL) {
 	
 	    @SuppressWarnings("rawtypes")
 		ArrayList dados = new ArrayList();
-	    String[] colunas = new String[] {"CÓDIGO","PROPRIETÁRIO","TELEFONE","CPF","E-MAIL","BLOCO","APTO","TIPO"};
+	    String[] colunas = new String[] {"Cï¿½DIGO","PROPRIETï¿½RIO","TELEFONE","CPF","E-MAIL","BLOCO","APTO","TIPO"};
 		conex.conexao();
 		conex.executaSQL(SQL);
 		
@@ -777,7 +777,7 @@ public void preencherTabelaProprietario(String SQL) {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			JOptionPane.showMessageDialog(null,"Não existe proprietário cadastrado no sistema. Por favor cadastre um proprietário!");
+			JOptionPane.showMessageDialog(null,"Nï¿½o existe proprietï¿½rio cadastrado no sistema. Por favor cadastre um proprietï¿½rio!");
 		}
 		
 		ModeloTabela modelo  = new ModeloTabela(dados, colunas);
@@ -831,7 +831,7 @@ public void preencherTabelaProprietario(String SQL) {
 					jTextFieldEstado.setText(conex.rs.getString("estado"));
 					jComboBoxTipoMorador.setSelectedItem(conex.rs.getString("tipo_proprietario"));
 					jInternalFramePrincipal.setVisible(true);
-					jInternalFrameCadastroEndereço.setVisible(true);
+					jInternalFrameCadastroEndereco.setVisible(true);
 
 					jTextFieldNomeProprietario.setEnabled(true);
 					jTextFieldLote.setEnabled(true);
@@ -851,7 +851,7 @@ public void preencherTabelaProprietario(String SQL) {
 					
 				} catch (SQLException e) {
 					
-					JOptionPane.showMessageDialog(null,"Erro ao selecionar Proprietário/n Erro:"+e);
+					JOptionPane.showMessageDialog(null,"Erro ao selecionar Proprietï¿½rio/n Erro:"+e);
 				}
 				
 				conex.desconectar();
