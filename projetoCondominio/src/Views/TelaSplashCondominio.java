@@ -1,35 +1,23 @@
-package Views;
+package views;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Font;
+import java.awt.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JProgressBar;
-
 public class TelaSplashCondominio extends JFrame {
-
-	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaSplashCondominio frame = new TelaSplashCondominio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+				TelaSplashCondominio frame = new TelaSplashCondominio();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
@@ -42,7 +30,7 @@ public class TelaSplashCondominio extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1024, 701);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -71,30 +59,26 @@ public class TelaSplashCondominio extends JFrame {
 		lblNewLabel_1.setBounds(463, 615, 92, 14);
 		panel.add(lblNewLabel_1);
 		
-		new Thread() {
-			
-			public void run() {
-				for(int i = 0; i<=100;i++) {
-					try {
-						sleep(60);
-						jProgressBarTelaSplash.setValue(i);
-						
-						if(jProgressBarTelaSplash.getValue()<=40) {
-							jLabelMostraProgresso.setText("Carregando Banco de Dados...");
-						}else if (jProgressBarTelaSplash.getValue()<=70) {
-							jLabelMostraProgresso.setText("Carregando Tabelas...");
-						}else if (jProgressBarTelaSplash.getValue()==100) {
-							jLabelMostraProgresso.setText("Conectando no Sistema...");
-							TelaPrincipalCondominio tela = new TelaPrincipalCondominio();
-							tela.setVisible(true);
-							dispose();
-						}
-					}catch(Exception e) {
-						Logger.getLogger(TelaSplashCondominio.class.getName()).log(Level.SEVERE,null,e);
+		new Thread(() -> {
+			for(int i = 0; i<=100;i++) {
+				try {
+					Thread.sleep(60);
+					jProgressBarTelaSplash.setValue(i);
+
+					if(jProgressBarTelaSplash.getValue()<=40) {
+						jLabelMostraProgresso.setText("Carregando Banco de Dados...");
+					}else if (jProgressBarTelaSplash.getValue()<=70) {
+						jLabelMostraProgresso.setText("Carregando Tabelas...");
+					}else if (jProgressBarTelaSplash.getValue()==100) {
+						jLabelMostraProgresso.setText("Conectando no Sistema...");
+						TelaPrincipalCondominio tela = new TelaPrincipalCondominio();
+						tela.setVisible(true);
+						dispose();
 					}
+				}catch(Exception e) {
+					Logger.getLogger(TelaSplashCondominio.class.getName()).log(Level.SEVERE,null,e);
 				}
 			}
-			
-		}.start();
+		}).start();
 	}
 }

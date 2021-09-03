@@ -1,38 +1,22 @@
-package Views;
-import Controller.ConexaoBD;
-import java.awt.BorderLayout;
+package views;
+import controller.DBConnection;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import java.awt.Color;
-import java.awt.SystemColor;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.*;
 
 public class TelaPrincipalCondominio extends JFrame {
-
-	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaPrincipalCondominio frame = new TelaPrincipalCondominio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+				TelaPrincipalCondominio frame = new TelaPrincipalCondominio();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
@@ -40,11 +24,11 @@ public class TelaPrincipalCondominio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	ConexaoBD conectar = new ConexaoBD();
+	DBConnection conectar = new DBConnection();
 	public TelaPrincipalCondominio(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1024, 708);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -68,23 +52,19 @@ public class TelaPrincipalCondominio extends JFrame {
 		panel_1.add(lblSolicitacoes);
 		
 		JButton btnCadastrarUsuario = new JButton("Controle de Acesso");
-		btnCadastrarUsuario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-					TelaUsuario tela = new TelaUsuario();
-					tela.setVisible(true);
-			}
+		btnCadastrarUsuario.addActionListener(e -> {
+				UsuarioView tela = new UsuarioView();
+				tela.setVisible(true);
 		});
 		btnCadastrarUsuario.setBounds(26, 126, 162, 54);
 		btnCadastrarUsuario.setBackground(new Color(240, 240, 240));
 		panel_1.add(btnCadastrarUsuario);
 		
 		JButton btnCadastrarProprietario = new JButton("Proprietarios / Moradores");
-		btnCadastrarProprietario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				CadastrarProprietario tela = new CadastrarProprietario();
-				tela.setVisible(true);
-			}
+		btnCadastrarProprietario.addActionListener(arg0 -> {
+
+			ProprietarioView tela = new ProprietarioView();
+			tela.setVisible(true);
 		});
 		btnCadastrarProprietario.setBackground(SystemColor.menu);
 		btnCadastrarProprietario.setBounds(190, 126, 193, 54);
