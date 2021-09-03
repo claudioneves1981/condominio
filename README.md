@@ -24,4 +24,4 @@ Abaixo, seguem links dos principais recursos usados no projeto.
 * [Site oficial do GitHub](http://github.com/)
 * [Documentação oficial do Lombok](https://projectlombok.org/)
 * [Site oficial do PostgreSQL](https://www.postgresql.org/)
-* [GitHub CLI para download)(https://cli.github.com/)
+* [GitHub CLI para download](https://cli.github.com/)
