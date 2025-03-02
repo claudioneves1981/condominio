@@ -1,33 +1,28 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
+import java.time.LocalDate;
+
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Proprietario {
+@Entity
+public class Proprietario extends Pessoa {
 
-	private int codigo;
-	private String pesquisa;
-	private String nome;
-	private String apto;
-	private String bloco;
-	private String cpf;
-	private String telefone;
-	private String email;
-	private String dataCadastro;
-	private String endereco;
-	private String numero;
-	private String complemento;
-	private String bairro;
-	private String cep;
-	private String cidade;
-	private String estado;
-	private String tipo;
+    private ChaveComposta chaveComposta;
+
+	public Proprietario(Long codigo, String pesquisa, Tipo tipo, String nome, String documento, LocalDate dataCadastro, Apartamento apto, Contato contato, Endereco endereco) {
+		super(codigo, pesquisa, tipo, nome, documento, dataCadastro);
+		chaveComposta.setApto(apto);
+		chaveComposta.setContato(contato);
+		this.endereco = endereco;
+	}
+
+	@ManyToOne(cascade= CascadeType.ALL)
+	@JoinColumn(name = "ID_ENDERECO")
+	private Endereco endereco;
 
 }
 

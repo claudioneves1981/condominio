@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns = "http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="crudHibernatePU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistence</provider>
+        <properties>
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.SQLiteDialect" />
+            <property name="jakarta.persistence.
+            jdbc.driver" value="org.sqlite.JDBC" />
+            <property name="jakarta.persistence.
+            jdbc.url" value="jdbc:sqlite:src/database/condominio.db" />
+            <property name="jakarta.persistence.
+            jdbc.user" value="" />
+            <property name="jakarta.persistence.
+            jdbc.password" value="" />
+
+            <property name="hibernate.
+            show_sql" value="true" />
+            <property name="hibernate.
+            format_sql" value="false" />
+            <property name="hibernate.
+            use_sql_comments" value="false" />
+            <property name="hibernate.
+            jdbc.wrap_result_sets" value="false" />
+            <property name="hibernate.
+            hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.
+            hbm2ddl.auto" value="create" />
+        </properties>
+    </persistence-unit>
+</persistence>

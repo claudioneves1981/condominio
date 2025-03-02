@@ -1,7 +1,10 @@
 package model;
 
+import lombok.Getter;
+
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TableModel extends AbstractTableModel {
 	
@@ -9,21 +12,18 @@ public class TableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
-		private ArrayList linhas = null;
+		@Getter
+        private List<String> linhas = new ArrayList<>();
 		private String[] colunas = null;
 		
-		public TableModel(ArrayList linhas, String[] colunas) {
+		public TableModel(List<String> linhas, String[] colunas) {
 			
 			setLinhas(linhas);
 			setColunas(colunas);
 			
 		}
 
-		public ArrayList getLinhas() {
-			return linhas;
-		}
-
-		public void setLinhas(ArrayList linhas) {
+        public void setLinhas(List<String> linhas) {
 			this.linhas = linhas;
 		}
 
@@ -42,11 +42,17 @@ public class TableModel extends AbstractTableModel {
 		public String getColumnName(int numCol) {
 			return colunas[numCol];
 		}
-		
-		public Object getValueAt(int numLin, int numCol) {
-			Object [] linha = (Object[])getLinhas().get(numLin);
-			return linha[numCol];
-		}
+
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		return null;
+	}
+
+	//public Object getValueAt(int numLin, int numCol) {
+	   //		Object [] linha = (Object[])getLinhas().get(numLin);
+	  //		return linha[numCol];
+	  //	}
 		
 	
 
